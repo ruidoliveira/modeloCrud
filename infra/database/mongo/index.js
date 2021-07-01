@@ -3,7 +3,6 @@ const app = express();
 const mongoose = require('mongoose');
 
 
-
 const connectionOptions = {
   useNewUrlParser: true,
   useFindAndModify: true,
@@ -11,7 +10,7 @@ const connectionOptions = {
   useCreateIndex: true
 }
 
-mongoose.connect('mongodb://localhost/noderest', connectionOptions);
+mongoose.connect('mongodb://localhost/noderocket', connectionOptions);
 mongoose.Promise = global.Promise;
 
 mongoose.connection.on('error', (err) =>{

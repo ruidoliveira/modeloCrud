@@ -1,16 +1,13 @@
-const userSchema = require('../models/city');
+const citySchema = require('../models/city');
 
-class UserRepository {
+class CityRepository {
   async create(body) {
-    return await userSchema.create(body);
+    return await citySchema.create(body);
   }
 
-  async findOne({email}){
-    return await userSchema.findOne({email});
+  async findOne({nome}){
+    return await citySchema.findOne({nome});
   }
-
-
-
 }
 
-module.exports = new UserRepository();
+module.exports = new CityRepository();

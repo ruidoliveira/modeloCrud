@@ -1,11 +1,13 @@
 const cityRepository = require('../repository/cityRepository');
-const cityModels = require('../models/city');
 class CityController {
-
     
-    async find(req, res)  { 
-        const cidades = await cityModels.find()
-        res.json(cidades);
+    async teste(req, res)  { 
+       try{
+        return res.status(400).send({message: 'deu certo'})    
+       }catch(err){
+           return res.status(400).send({error: 'deu ruim'})
+       }
+       
     }
 }
 module.exports = new CityController()
