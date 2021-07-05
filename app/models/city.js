@@ -1,23 +1,10 @@
-const mongoose = require('mongoose');
-const Schema = mongoose.Schema;
+const mongoose = require('../../infra/database/mongo');
 
-const CitySchema = new Schema({
-    nome: {
-            type: String, 
-            required: true, 
-            unique: true, 
-            lowercase: true,
-        },
-    estado: { 
-            type: String, 
-            required: true, 
-            select: false,
-        },
-    created: { 
-            type: Date, 
-            default: Date.now,
-        }
-})
+const CitySchema = new mongoose.Schema({
+    nome: String,
+    estado: String
+},
+);
 
-const City = mongoose.model('City', CitySchema);
-module.exports = City;
+module.exports = mongoose.model('City', CitySchema);
+

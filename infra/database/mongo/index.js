@@ -7,7 +7,8 @@ const connectionOptions = {
   useNewUrlParser: true,
   useFindAndModify: true,
   useUnifiedTopology: true,
-  useCreateIndex: true
+  useCreateIndex: true,
+  useMongoCliente: true
 }
 
 mongoose.connect('mongodb://localhost/noderocket', connectionOptions);
@@ -25,8 +26,8 @@ mongoose.connection.on('connected', () =>{
   console.log(`✅ Aplicação conectada do bando de dados!`);
 });
 
-app.listen(3000, ()=>{
-  console.log("✅ Server esta rodando na porta 3000 ")
+app.listen(3001, ()=>{
+  console.log("✅ Server esta rodando na porta 3001 ")
 })
 
 module.exports = mongoose;
