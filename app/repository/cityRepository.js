@@ -26,7 +26,7 @@ class CityRepository {
 
     console.log('idRepository:', _id);
     console.log('nomeRepository', updates);
-    const result = await citySchema.findOneAndUpdate(_id, { nome, estado}, {new : true});
+    const result = await citySchema.findByIdAndUpdate(_id, { nome, estado}, {new : true});
     console.log(result);
     return result;
   }
