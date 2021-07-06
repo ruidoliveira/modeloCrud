@@ -2,17 +2,14 @@ const citySchema = require('../models/city');
 
 class CityRepository {
   async create(body) {
-    // console.log('Repository create', body);
     return await citySchema.create(body);
   }
 
   async findOne({nome}){
-    // console.log('Repository findOne', nome);
     return await citySchema.findOne({nome});
   }
 
-  async find(){
-    // console.log('Repository find', {});
+  async find(){ 
     return await citySchema.find({});
   }
 
@@ -23,11 +20,8 @@ class CityRepository {
 
   async findOneAndUpdate(_id , updates){
     const {nome, estado} = updates;
-
-    console.log('idRepository:', _id);
-    console.log('nomeRepository', updates);
     const result = await citySchema.findByIdAndUpdate(_id, { nome, estado}, {new : true});
-    console.log(result);
+    
     return result;
   }
   
