@@ -6,7 +6,6 @@ class UserRepository {
   }
 
   async findOne({nome}){
-    console.log({nome});
     return await userSchema.findOne({nome});
   }
 
@@ -16,10 +15,14 @@ class UserRepository {
 
   async findByIdAndRemove(_id){
       const result = await userSchema.findByIdAndRemove(_id)
-      
       return result;
-
   }
+
+  async findById(_id){
+    const result = await userSchema.findById(_id)   
+    return result;
+
+}
 
   async findOneAndUpdate(_id , updates){
     const {nome, sexo, dtanasc, idade, cidade} = updates;

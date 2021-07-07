@@ -29,6 +29,7 @@ routes.patch('/city/atualizarCidade/:id', CityController.atualizarCidade);
  routes.get('/user/pesquisarNome', UserController.buscarNomeUser);
  routes.delete('/user/deletarUsuario/:id', UserController.deletarUser); 
  routes.patch('/user/atualizarCidade/:id', UserController.atualizarUsuario); 
+ routes.get('/user/pesquisarid/:id', UserController.buscarId);
 
 
 module.exports = routes;

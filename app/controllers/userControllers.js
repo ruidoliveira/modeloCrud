@@ -48,18 +48,17 @@ class UserController {
 
     }
 
-    // async buscarEstadp(req, res){
-    //     const {nome, estado} = req.body;
-    //     try{
-    //         if(!estado) return res.send({error: 'Falta usuario'});
-    //         const cidades = await userRepository.findOne({estado: req.body.estado});
-    //         res.json(cidades);
+    async buscarId(req, res){
+        try{
+            
+            const usuario = await userRepository.findById({_id: req.params.id})
+            res.json(usuario);
 
-    //     }catch{
-    //         return res.status(400).send({ error: 'Erro ao tentar localizar por usuario'});
-    //     }
+        }catch{
+            return res.status(400).send({error: 'Erro ao tentar localizar usuario pelo Id'})
+        }
 
-    // }
+    }
 
     async deletarUser(req, res){
         
