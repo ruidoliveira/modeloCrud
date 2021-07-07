@@ -58,7 +58,7 @@ class UserController {
             return res.status(400).send({error: 'Erro ao tentar localizar usuario pelo Id'})
         }
 
-    }
+    }0
 
     async deletarUser(req, res){
         

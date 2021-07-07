@@ -18,6 +18,7 @@ routes.post('/city', CityController.teste);
 routes.post('/city/registrar', CityController.criarCidade);
 routes.get('/city/pesquisar', CityController.buscarCidade);
 routes.get('/city/pesquisarNome', CityController.buscarNomeCidade);
+routes.get('/city/pesquisarEstado', CityController.buscarNomeEstado);
 routes.delete('/city/deletarCidade', CityController.deletarCidade); 
 routes.patch('/city/atualizarCidade/:id', CityController.atualizarCidade); 
 

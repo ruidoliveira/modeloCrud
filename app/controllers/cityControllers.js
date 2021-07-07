@@ -48,10 +48,11 @@ class CityController {
     }
 
     async buscarNomeEstado(req, res){
-        const {nome, estado} = req.body;
+        
         try{
-            if(!estado) return res.send({error: 'Falta estado'});
-            const cidades = await cityRepository.findOne({estado: req.body.estado});
+            // if(!estado) return res.send({error: 'Falta estado'});
+            // console.log('estado:', estado)
+            const cidades = await cityRepository.findOneEstado({estado: req.body.estado});
             res.json(cidades);
 
         }catch{

@@ -9,6 +9,12 @@ class CityRepository {
     return await citySchema.findOne({nome});
   }
 
+  async findOneEstado({estado}){
+    console.log('EstadoRepository', estado)
+    return await citySchema.find({estado});
+    //
+  }
+
   async find(){ 
     return await citySchema.find({});
   }
